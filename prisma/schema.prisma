@@ -11,13 +11,14 @@ datasource db {
 }
 
 model User {
-  id              Int               @id @default(autoincrement())
+  id              String            @unique
   email           String            @unique
+  isAdmin         Boolean           @default(false)
   purchasedCourse PurchasedCourse[]
 }
 
 model PurchasedCourse {
-  userId   Int
+  userId   String
   courseId Int
   user     User   @relation(fields: [userId], references: [id])
   course   Course @relation(fields: [courseId], references: [id])
