@@ -17,8 +17,8 @@ function Navbar({}: Props) {
           MLms
         </Link>
         <div className="flex gap-10 items-center">
-          <Link href="#">Home</Link>
-          <Link href="#">Courses</Link>
+          <Link href="/">Home</Link>
+          <Link href="/courses">Courses</Link>
         </div>
         {isSignedIn ? (
           <UserButton />
