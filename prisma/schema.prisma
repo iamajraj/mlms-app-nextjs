@@ -50,9 +50,9 @@ model Chapter {
 model Lesson {
   id          Int     @id @default(autoincrement())
   title       String
-  descriptoin String?
+  description String?
   videoUrl    String
-  chapterId   Int
   length      String?
+  chapterId   Int
   chapter     Chapter @relation(fields: [chapterId], references: [id])
 }

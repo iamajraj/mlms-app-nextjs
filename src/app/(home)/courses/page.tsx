@@ -1,11 +1,15 @@
 import React from 'react';
 import CourseCard from '@/components/CourseCard';
+import { getCourses } from '../../../utils/getCourses';
 
 type Props = {};
 
-function Courses({}: Props) {
+async function Courses({}: Props) {
+  const courses = await getCourses();
+
   return (
     <div className="max-w-6xl mx-auto h-full flex flex-col">
+      <pre>{JSON.stringify(courses, null, 2)}</pre>
       <h1 className="w-max mx-auto py-5 text-[30px]">
         Browse{' '}
         <span className="relative">
