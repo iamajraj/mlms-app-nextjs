@@ -33,6 +33,7 @@ model Course {
   shortDescription String
   thumbnail        String
   price            Float
+  published        Boolean           @default(true)
   chapters         Chapter[]
   purchasedCourse  PurchasedCourse[]
 }

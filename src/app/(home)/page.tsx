@@ -25,7 +25,7 @@ export default function Home() {
         <img className="absolute right-0 bottom-10" src="/two-lines.svg" />
       </div>
       <Link href="/courses" className="mt-4">
-        <Button>The Courses</Button>
+        <Button>Browse Courses</Button>
       </Link>
 
       <h2 className="mt-20 font-bold text-center leading-[36px] text-[36px]">

@@ -5,7 +5,7 @@ type Props = {};
 
 function Footer({}: Props) {
   return (
-    <div className="h-[70px] flex items-center justify-between border-t shadow-sm mt-14 py-5 px-20">
+    <div className="flex items-center justify-between border-t shadow-sm py-5 px-20 mt-auto">
       <p className="text-[14px]">2023 &copy; MLms</p>
       <ul className="flex gap-4 items-center">
         <Link href="/courses">Courses</Link>

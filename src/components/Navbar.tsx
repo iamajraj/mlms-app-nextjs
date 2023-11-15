@@ -1,6 +1,6 @@
 'use client';
 
-import { UserButton, useAuth } from '@clerk/nextjs';
+import { UserButton, useUser } from '@clerk/nextjs';
 import Link from 'next/link';
 import React from 'react';
 import { Button } from '@/components/ui/button';
@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 type Props = {};
 
 function Navbar({}: Props) {
-  const { isSignedIn } = useAuth();
+  const { isSignedIn, user } = useUser();
 
   return (
     <div className="border-b py-5 shadow-sm px-5 md:px-0">
@@ -19,6 +19,9 @@ function Navbar({}: Props) {
         <div className="flex gap-10 items-center">
           <Link href="/">Home</Link>
           <Link href="/courses">Courses</Link>
+          {user?.publicMetadata.isAdmin ? (
+            <Link href="/admin">Admin</Link>
+          ) : null}
         </div>
         {isSignedIn ? (
           <UserButton />

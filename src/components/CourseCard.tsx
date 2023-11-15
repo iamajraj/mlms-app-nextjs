@@ -10,7 +10,7 @@ function CourseCard({}: Props) {
         className="h-[150px] object-cover w-full"
         src="https://media.geeksforgeeks.org/wp-content/uploads/20230629123647/Best-C-Programming-Courses-For-Beginners.png"
       />
-      <div className="py-2 px-2 flex flex-col">
+      <div className="py-2 px-2 flex flex-col h-full">
         <p className="text-[18px]">C Programming Course</p>
         <p className="text-[14px] text-slate-500">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi,
