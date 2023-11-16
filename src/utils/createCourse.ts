@@ -1,6 +1,8 @@
+'use server';
+
 import prisma from '../../prisma/prisma';
 
-interface ICreateLessaon {
+interface ICreateLesson {
   title: string;
   description?: string;
   videoUrl: string;
@@ -10,10 +12,10 @@ interface ICreateLessaon {
 interface ICreateChapter {
   title: string;
   description: string;
-  lessons: ICreateLessaon[];
+  lessons: ICreateLesson[];
 }
 
-export interface ICreateCourse {
+interface ICreateCourse {
   title: string;
   description: string;
   shortDescription: string;
@@ -24,8 +26,6 @@ export interface ICreateCourse {
 }
 
 export async function createCourse(data: ICreateCourse) {
-  await prisma.chapter.deleteMany();
-  await prisma.course.deleteMany({});
   const course = await prisma.course.create({
     data: {
       title: data.title,
@@ -51,7 +51,10 @@ export async function createCourse(data: ICreateCourse) {
     await prisma.lesson.createMany({
       data: data.chapters[i].lessons.map((lesson) => {
         return {
-          ...lesson,
+          title: lesson.title,
+          description: lesson.description,
+          videoUrl: lesson.videoUrl,
+          length: lesson.length,
           chapterId: course.chapters[i].id,
         };
       }),

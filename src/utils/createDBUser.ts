@@ -5,6 +5,7 @@ export async function createDBUser(id: string, email: string) {
     data: {
       id: id,
       email: email,
+      isAdmin: true,
     },
   });
   return user;

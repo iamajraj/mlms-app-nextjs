@@ -21,7 +21,11 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={cn(fontSans.className, 'h-full w-full flex flex-col')}>
+        <body
+          className={cn(
+            fontSans.className,
+            'h-full w-full flex flex-col min-h-screen'
+          )}>
           <Navbar />
           {children}
           <Footer />

@@ -9,7 +9,6 @@ async function Courses({}: Props) {
 
   return (
     <div className="max-w-6xl mx-auto h-full flex flex-col">
-      <pre>{JSON.stringify(courses, null, 2)}</pre>
       <h1 className="w-max mx-auto py-5 text-[30px]">
         Browse{' '}
         <span className="relative">
@@ -20,9 +19,9 @@ async function Courses({}: Props) {
           />
         </span>
       </h1>
-      <div className="grid grid-cols-4 grid-rows-1 w-full h-full gap-5 py-5 mt-4">
-        {Array.from({ length: 5 }).map((_, i) => (
-          <CourseCard key={i} />
+      <div className="grid grid-cols-4 grid-rows-1 w-full h-full gap-5 py-5 mt-4 ">
+        {courses.map((course) => (
+          <CourseCard key={course.id} course={course} />
         ))}
       </div>
     </div>

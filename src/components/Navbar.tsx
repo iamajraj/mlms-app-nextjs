@@ -18,7 +18,7 @@ function Navbar({}: Props) {
         </Link>
         <div className="flex gap-10 items-center">
           <Link href="/">Home</Link>
-          <Link href="/courses">Courses</Link>
+          <Link href="/courses">Browse Course</Link>
           {user?.publicMetadata.isAdmin ? (
             <Link href="/admin">Admin</Link>
           ) : null}
