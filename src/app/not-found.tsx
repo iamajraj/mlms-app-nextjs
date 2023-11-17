@@ -6,8 +6,8 @@ type Props = {};
 
 function NotFound({}: Props) {
   return (
-    <div className="flex h-full items-center flex-col justify-center">
-      <p className="text-[50px] font-bold leading-[70px]">Page Not Found</p>
+    <div className="flex h-full flex-1 items-center flex-col justify-center">
+      <p className="text-[50px] font-bold leading-[70px]">Not Found</p>
       <p className="w-[500px] text-center">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit alias
         minus nostrum tempora earum!

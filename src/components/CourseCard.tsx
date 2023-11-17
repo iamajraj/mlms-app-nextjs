@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ICourse } from '@/types';
+import Link from 'next/link';
 
 type Props = {
   course: ICourse;
@@ -33,9 +34,11 @@ function CourseCard({ course }: Props) {
           </div>
           <p className="text-[22px] font-semibold">${course.price}</p>
         </div>
-        <Button className="mt-2" variant="outline">
-          Overview
-        </Button>
+        <Link href={`/courses/${course.id}`} className="relative w-full">
+          <Button className="mt-2 w-full" variant="outline">
+            Overview
+          </Button>
+        </Link>
       </div>
     </div>
   );
