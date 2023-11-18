@@ -1,4 +1,4 @@
-## LMS application built using Nextjs
+## LMS course application built using Nextjs
 
 Here's how it looks like:
 
