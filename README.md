@@ -1,4 +1,4 @@
-## LMS course application built using Nextjs
+## LMS course application built using Nextjs 14 and Prisma
 
 Here's how it looks like:
 
