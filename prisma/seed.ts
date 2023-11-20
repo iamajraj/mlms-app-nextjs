@@ -1,49 +1,51 @@
-import { PrismaClient } from '@prisma/client';
 import { ICreateCourse, createCourse } from '../src/utils/createCourse';
 
-const prisma = new PrismaClient();
 const data: ICreateCourse = {
-  title: 'My First Course',
-  shortDescription: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  title: 'Web Development',
+  shortDescription: 'Complete Full Stack Web Development Course',
   description:
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
   price: 59.99,
   published: true,
-  thumbnail: 'https://i.ytimg.com/vi/HVjjoMvutj4/maxresdefault.jpg',
+  thumbnail: 'https://steppingskills.in/store/1360/Certified%20Course.png',
   chapters: [
     {
-      title: 'Chapter 1',
-      description: 'my chapter one description is good',
+      title: 'Overview',
+      description: 'An overview of web development',
       lessons: [
         {
-          title: 'Chap1Les1',
-          description: 'Chapter 1 lesson 1',
-          length: '10min',
-          videoUrl: 'https://www.youtube.com/watch?v=zjBx9ZgjPt4',
+          title: 'HTML fundamentals',
+          description:
+            'In this lesson you will learn about the fundamentals of HTML',
+          length: '15min',
+          videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         },
         {
-          title: 'Chap1Les2',
-          description: 'Chapter 1 lesson 2',
-          length: '9min',
-          videoUrl: 'https://www.youtube.com/watch?v=XXIwkjRRB80',
+          title: 'CSS fundamentals',
+          description:
+            'In this lesson you will learn about the fundamentals of CSS',
+          length: '20min',
+          videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         },
       ],
     },
     {
-      title: 'Chapter 2',
-      description: 'my chapter two description is well',
+      title: 'Fundamentals of JavaScript',
+      description: 'This chapter is all about the fundamentals of JavaScript',
       lessons: [
         {
-          title: 'Chap2Les1',
-          description: 'Chapter 2 lesson 1',
-          length: '8min',
-          videoUrl: 'https://www.youtube.com/watch?v=zjBx9ZgjPt4',
+          title: 'JavaScript History',
+          description:
+            'In this lesson you will get to know about the history of javascript and how it evolved.',
+          length: '16min',
+          videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         },
         {
-          title: 'Chap2Les2',
-          description: 'Chapter 2 lesson 2',
-          length: '7min',
-          videoUrl: 'https://www.youtube.com/watch?v=XXIwkjRRB80',
+          title: 'Basic Syntax of JavaScript',
+          description:
+            'This lesson will teach you the basic syntax of JavaScript and how it works.',
+          length: '25min',
+          videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         },
       ],
     },
@@ -56,10 +58,9 @@ const main = async () => {
 
 main()
   .then(async () => {
-    await prisma.$disconnect();
+    console.log('✨ Seeded Course');
   })
   .catch(async (err) => {
-    console.log(err);
-    await prisma.$disconnect();
+    console.log('🔴 Seed error ', err);
     process.exit(1);
   });

@@ -17,7 +17,6 @@ export type TChapter = Omit<Omit<Chapter, 'courseId'>, 'id'> & {
   id: string;
   lessons: TLesson[];
 };
-
 const defaultCourseValues: TCourse = {
   description: '',
   price: 0,

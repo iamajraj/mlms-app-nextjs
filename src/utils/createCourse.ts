@@ -4,7 +4,7 @@ import prisma from '../../prisma/prisma';
 
 interface ICreateLesson {
   title: string;
-  description?: string;
+  description: string;
   videoUrl: string;
   length: string;
 }
@@ -15,7 +15,7 @@ interface ICreateChapter {
   lessons: ICreateLesson[];
 }
 
-interface ICreateCourse {
+export interface ICreateCourse {
   title: string;
   description: string;
   shortDescription: string;
