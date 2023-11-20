@@ -24,7 +24,7 @@ function Navbar({}: Props) {
           ) : null}
         </div>
         {isSignedIn ? (
-          <UserButton />
+          <UserButton afterSignOutUrl="/" />
         ) : (
           <Link href="/sign-in">
             <Button>Sign in</Button>
